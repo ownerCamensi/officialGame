@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(to bottom, #282A48, #1C1D2C);
+  position: relative;
+  width: 100%;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header .logo .title p {
+  font-size: clamp(1.25rem, 4vw, 1.5625rem);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  padding: 10px;
+  gap: 16px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+header nav ul li {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  cursor: pointer;
+}
+
+header nav ul li a {
+  color: #B6B6BA;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #fff;
+}
+
+/* Main Content */
+.discover, .starting, .screen {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.discover h1, .starting h1, .screen h1 {
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.discover p, .starting p, .screen p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.starting p {
+  padding: 0 15px;
+}
+
+/* Buttons Grid */
+.started {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.started .button1, 
+.started .button2 {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.started .button1 a, 
+.started .button2 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.started .button1 a {
+  background-color: #4F5BDA;
+}
+
+.started .button2 a {
+  background-color: #292B40;
+}
+
+.started .button1 a:hover, 
+.started .button2 a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Section */
+.image img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #222441;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+footer .span p {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  color: #E3E3E3;
+  margin-bottom: 1rem;
+}
+
+footer .nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer .nav ul li {
+  list-style-type: none;
+  text-transform: capitalize;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+footer .nav ul li a {
+  text-decoration: none;
+  color: #B6B6BA;
+  transition: color 0.3s ease;
+}
+
+footer .nav ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+nav ul li a .active {
+  color: #727ACF;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    height: auto;
+  }
+    
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  header .logo .title p {
+    font-size: 1.25rem;
+  }
+  
+  header nav {
+    display: none;
+    width: 100%;
+  }
+  
+  header nav.active {
+    display: block;
+    position: static;
+    margin-top: 1rem;
+    background: #1F202C;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  header nav.active ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .discover h1, 
+  .starting h1, 
+  .screen h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .discover p, 
+  .starting p, 
+  .screen p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .started {
+    grid-template-columns: 1fr;
+  }
+  
+  .started .button1 a, 
+  .started .button2 a {
+    height: 45px;
+    font-size: 0.875rem;
+  }
+  
+  footer .nav ul {
+    gap: 1rem;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+  header .logo {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .discover h1 {
+    font-size: 1.75rem;
+  }
+  
+  footer .span p {
+    font-size: 1.1rem;
+  }
+  
+  footer .nav ul li {
+    font-size: 0.875rem;
+  }
+}
