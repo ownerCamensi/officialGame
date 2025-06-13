@@ -735,13 +735,13 @@ const apkTrigger = document.querySelector("strong.download-apk");
 if (apkTrigger) {
     apkTrigger.addEventListener("click", () => {
         const link = document.createElement("a");
-        link.href = "app.apk";
-        link.download = "app.apk"; // Optional: force download name
+        link.href = "https://github.com/ownerCamensi/Game/releases/download/1.10.2/app.zip";
+        link.download = "app.zip"; // Optional: force filename
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     });
-}
+        }
     </script>
 </body>
 </html>
